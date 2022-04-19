@@ -1,4 +1,4 @@
-# Awesome-BookList
+# Awesome-Books
 
 This project creates a book collection webpage where one keys in the book title and author.
 
