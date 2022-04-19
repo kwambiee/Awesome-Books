@@ -1,4 +1,5 @@
 const bookForm = document.querySelector("#form");
+const collection = document.querySelector(".table");
 
 function Book() {
   this.title = document.querySelector("#title").value;
@@ -58,8 +59,13 @@ const removeBook = (bk) => {
 
 bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  collection.style.display = "block";
+});
+
+bookForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   const book = new Book();
-  //   addBook(book);
+  addBook(book);
   bookForm.reset();
   show();
 });
