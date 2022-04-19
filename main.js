@@ -31,7 +31,8 @@ const save = (book) => {
   show();
 };
 // add a book to library array
- // object destructuring
+const addBook = (book) => {
+  const { title, author } = book; // object destructuring
 
   const books = getBooks();
   const dup = books.filter(
@@ -53,7 +54,7 @@ const save = (book) => {
 bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const book = new Book();
-//   addBook(book);
+  //   addBook(book);
   bookForm.reset();
   show();
 });
