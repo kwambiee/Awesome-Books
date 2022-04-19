@@ -50,6 +50,11 @@ const addBook = (book) => {
 
 // delete a book
 // eslint-disable-next-line no-unused-vars
+const removeBook = (bk) => {
+  const books = getBooks();
+  books.splice(bk, 1);
+  save(books);
+};
 
 bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
