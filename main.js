@@ -1,17 +1,17 @@
-const bookForm = document.querySelector("#form");
-const collection = document.querySelector(".table");
+const bookForm = document.querySelector('#form');
+const collection = document.querySelector('.table');
 
 function Book() {
-  this.title = document.querySelector("#title").value;
-  this.author = document.querySelector("#author").value;
+  this.title = document.querySelector('#title').value;
+  this.author = document.querySelector('#author').value;
 }
 // get books from Local Storage
 const getBooks = () => {
-  const lib = localStorage.getItem("library");
+  const lib = localStorage.getItem('library');
   return lib ? JSON.parse(lib) : [];
 };
 const render = (books) => {
-  let booksList = "";
+  let booksList = '';
   books.forEach((book, i) => {
     const { title, author } = book;
     booksList += `
@@ -25,10 +25,10 @@ const render = (books) => {
   return booksList;
 };
 const show = () => {
-  document.getElementById("table-body").innerHTML = render(getBooks());
+  document.getElementById('table-body').innerHTML = render(getBooks());
 };
 const save = (book) => {
-  localStorage.setItem("library", JSON.stringify(book));
+  localStorage.setItem('library', JSON.stringify(book));
   show();
 };
 // add a book to library array
@@ -57,12 +57,12 @@ const removeBook = (bk) => {
   save(books);
 };
 
-bookForm.addEventListener("submit", (e) => {
+bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  collection.style.display = "block";
+  collection.style.display = 'block';
 });
 
-bookForm.addEventListener("submit", (e) => {
+bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const book = new Book();
   addBook(book);
