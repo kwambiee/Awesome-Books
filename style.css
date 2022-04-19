@@ -1,10 +1,6 @@
-.hidden {
-  display: none !important;
-}
-
-.show {
-  display: block;
-}
+/* .table {
+  display: none;
+} */
 
 table th {
   width: 30%;
