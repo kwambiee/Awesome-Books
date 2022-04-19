@@ -27,3 +27,7 @@ const render = (books) => {
 const show = () => {
   document.getElementById('table-body').innerHTML = render(getBooks());
 };
+const save = (book) => {
+  localStorage.setItem('library', JSON.stringify(book));
+  show();
+};
