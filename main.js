@@ -48,3 +48,30 @@ const addBook = (book) => {
   }
   return save(books);
 };
+const displayForm = () => {
+  document.querySelector('#button').addEventListener('click', () => {
+    if (collection.classList.contains('hidden')) {
+      collection.classList.remove('hidden');
+      collection.classList.add('show');
+    } else {
+      collection.classList.add('hidden');
+    }
+  });
+};
+// delete a book
+// eslint-disable-next-line no-unused-vars
+const removeBook = (bk) => {
+  const books = getBooks();
+  books.splice(bk, 1);
+  save(books);
+};
+bookForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const book = new Book();
+  addBook(book);
+  bookForm.reset();
+  displayForm();
+  show();
+});
+// load books list when page loads
+window.onload = show();
