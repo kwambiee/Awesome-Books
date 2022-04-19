@@ -14,7 +14,7 @@ class BookLists {
       <th scope="row">${index}</th>  
       <td>${book.title}</td>
       <td>${book.author}</td>
-      <td ><span id="${index + 1}" onClick="remove(this.index)" class="btn btn-danger btn-sm delete del py-2 px-3">Delete</span></td>
+      <td id="${index}"><span  onClick="remove(this.index)" class="btn btn-danger btn-sm delete del py-2 px-3">Delete</span></td>
     </tr>`;
     });
   }
@@ -31,8 +31,8 @@ class BookLists {
   }
 
   // delete a book
-  removeBook(bk) {
-    this.bookList.splice(bk, 1);
+  removeBook(index) {
+    this.bookList.splice(index, 1);
     localStorage.setItem('library', JSON.stringify(this.bookList));
     this.showBooks();
   }
@@ -46,9 +46,9 @@ const addInput = document.querySelector('#button');
 bookList.showBooks();
 
 // eslint-disable-next-line no-unused-vars
-function remove(i) {
+function remove(index) {
   //eslint-disable-line
-  bookList.removeBook(i);
+  bookList.removeBook(index);
 }
 
 addInput.addEventListener('click', (e) => {
