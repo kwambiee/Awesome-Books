@@ -31,3 +31,20 @@ const save = (book) => {
   localStorage.setItem('library', JSON.stringify(book));
   show();
 };
+// add a book to library array
+const addBook = (book) => {
+  const { title, author } = book;
+
+  const books = getBooks();
+  const dup = books.filter(
+    // eslint-disable-next-line comma-dangle
+    (item) => item.title === title && item.author === author
+  );
+  if (dup.length === 0 && title.length > 0) {
+    books.push({
+      title,
+      author,
+    });
+  }
+  return save(books);
+};
