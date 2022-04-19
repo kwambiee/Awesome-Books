@@ -1,16 +1,16 @@
-const bookForm = document.querySelector('#form');
+const bookForm = document.querySelector("#form");
 
 function Book() {
-  this.title = document.querySelector('#title').value;
-  this.author = document.querySelector('#author').value;
+  this.title = document.querySelector("#title").value;
+  this.author = document.querySelector("#author").value;
 }
 // get books from Local Storage
 const getBooks = () => {
-  const lib = localStorage.getItem('library');
+  const lib = localStorage.getItem("library");
   return lib ? JSON.parse(lib) : [];
 };
 const render = (books) => {
-  let booksList = '';
+  let booksList = "";
   books.forEach((book, i) => {
     const { title, author } = book;
     booksList += `
@@ -24,15 +24,14 @@ const render = (books) => {
   return booksList;
 };
 const show = () => {
-  document.getElementById('table-body').innerHTML = render(getBooks());
+  document.getElementById("table-body").innerHTML = render(getBooks());
 };
 const save = (book) => {
-  localStorage.setItem('library', JSON.stringify(book));
+  localStorage.setItem("library", JSON.stringify(book));
   show();
 };
 // add a book to library array
-const addBook = (book) => {
-  const { title, author } = book;
+ // object destructuring
 
   const books = getBooks();
   const dup = books.filter(
@@ -50,15 +49,11 @@ const addBook = (book) => {
 
 // delete a book
 // eslint-disable-next-line no-unused-vars
-const removeBook = (bk) => {
-  const books = getBooks();
-  books.splice(bk, 1);
-  save(books);
-};
-bookForm.addEventListener('submit', (e) => {
+
+bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const book = new Book();
-  addBook(book);
+//   addBook(book);
   bookForm.reset();
   show();
 });
