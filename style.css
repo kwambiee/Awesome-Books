@@ -1,0 +1,11 @@
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+table th {
+  width: 30%;
+}
