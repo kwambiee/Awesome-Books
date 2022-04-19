@@ -1,5 +1,4 @@
 const bookForm = document.querySelector('#form');
-// const collection = document.querySelector('.table');
 
 function Book() {
   this.title = document.querySelector('#title').value;
@@ -48,15 +47,7 @@ const addBook = (book) => {
   }
   return save(books);
 };
-// const displayForm = () => {
-//   document.querySelector('#button').addEventListener('click', () => {
-//     if (collection.style.display === 'none') {
-//       collection.style.display = 'block';
-//     } else {
-//       collection.style.display = 'none';
-//     }
-//   });
-// };
+
 // delete a book
 // eslint-disable-next-line no-unused-vars
 const removeBook = (bk) => {
@@ -69,7 +60,6 @@ bookForm.addEventListener('submit', (e) => {
   const book = new Book();
   addBook(book);
   bookForm.reset();
-  //   displayForm();
   show();
 });
 // load books list when page loads

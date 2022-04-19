@@ -16,6 +16,20 @@ This project creates a book collection webpage where one keys in the book title 
 - The correct book dissapears from the page.
 - Make sure that data is preserved in the browser's memory by using localStorage.
 
+## Getting Started
+
+**Just fork it and fell free to use it.**
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+Having a web browser, code editor and git.
+
+### Install
+
+Just fork it and you are good to go.
+
 ## Built With
 
 - HTML
@@ -29,3 +43,15 @@ This project creates a book collection webpage where one keys in the book title 
 - Twitter: [@kwambiee](https://twitter.com/kwambiee)
 - Linkedin: [Joy Kwamboka](https://www.linkedin.com/in/joy-kwamboka)
 - E-mail: kwambokaj2.jk@gmail.com
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
