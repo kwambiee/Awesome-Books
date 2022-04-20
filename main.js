@@ -7,32 +7,36 @@ class BookLists {
 
   showBooks() {
     const bookTable = document.getElementById('table-body');
-    bookTable.innerHTML = '';
-    this.bookList.forEach((book, index) => {
-      bookTable.innerHTML += `
+    let table = '';
+    this.bookList.forEach((book, i) => {
+      table += `
     <tr>
-      <th scope="row">${index}</th>  
+      <th scope="row">${i + 1}</th>  
       <td>${book.title}</td>
       <td>${book.author}</td>
-      <td id="${index}"><span  onClick="remove(this.index)" class="btn btn-danger btn-sm delete del py-2 px-3">Delete</span></td>
+      <td><span id="${book.id}" onClick="remove(${
+  book.id
+})" class="btn btn-danger btn-sm delete del py-2 px-3">Delete</span></td>
     </tr>`;
     });
+    bookTable.innerHTML = table;
   }
 
   // add a book to library array
   addBook(title, author) {
     const book = {
+      id: this.bookList.length + 1,
       title,
       author,
     };
 
-    this.bookList.push(book);
+    this.bookList = [...this.bookList, book];
     localStorage.setItem('library', JSON.stringify(this.bookList));
   }
 
   // delete a book
   removeBook(index) {
-    this.bookList.splice(index, 1);
+    this.bookList = this.bookList.filter((b) => b.id !== index);
     localStorage.setItem('library', JSON.stringify(this.bookList));
     this.showBooks();
   }
@@ -56,8 +60,8 @@ addInput.addEventListener('click', (e) => {
   if (titleInput.value && authorInput.value) {
     bookList.addBook(titleInput.value, authorInput.value);
     bookList.showBooks();
-    (titleInput.value = '');
-    (authorInput.value = '');
+    titleInput.value = '';
+    authorInput.value = '';
   }
 });
 // load books list when page loads
