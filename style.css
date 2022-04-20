@@ -1,10 +1,11 @@
 body {
-  background-image: linear-gradient(
-    360deg,
-    #eadedb 0%,
-    #bc70a4 50%,
-    #bfd641 75%
-  );
+  background-image:
+    linear-gradient(
+      360deg,
+      #eadedb 0%,
+      #bc70a4 50%,
+      #bfd641 75%
+    );
   opacity: 0.95;
   background-size: cover;
   height: 100%;
