@@ -1,3 +1,48 @@
+body {
+  background-image:
+    linear-gradient(
+      360deg,
+      #eadedb 0%,
+      #bc70a4 50%,
+      #bfd641 75%
+    );
+  opacity: 0.95;
+  background-size: cover;
+  height: 100%;
+}
+
+h1 {
+  padding-bottom: 5%;
+}
+
+.table {
+  border: 1px solid black;
+}
+
 table th {
   width: 30%;
+}
+
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.author {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.form-control {
+  padding: 1.5rem 0.5rem;
+}
+
+.bookForm {
+  padding-top: 5%;
 }
