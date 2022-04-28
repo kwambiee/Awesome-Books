@@ -16,6 +16,10 @@ This project creates a book collection webpage where one keys in the book title 
 - The correct book dissapears from the page.
 - Make sure that data is preserved in the browser's memory by using localStorage.
 
+## Live Demo
+
+[Live Demo](https://kwambiee.github.io/Awesome-Books/)
+
 ## Getting Started
 
 **Just fork it and fell free to use it.**
